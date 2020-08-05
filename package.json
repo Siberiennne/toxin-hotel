@@ -1,0 +1,19 @@
+{
+  "name": "toxin-hotel",
+  "version": "1.0.0",
+  "description": "A maket to book rooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anna",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Siberiennne/hotel-booking.git"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "webpack": "^4.44.1"
+  }
+}
