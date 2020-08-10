@@ -3,10 +3,11 @@ const fs = require('fs')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'build')
+  dist: path.join(__dirname, 'dist')
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages`
@@ -15,14 +16,12 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.p
 module.exports = {
   mode: 'development',
   entry: {
-    'index': PATHS.src + 'pug/pages/index.js'
+    'color_type': PATHS.src + '/main.js'
   },
   watch: true,
   output: {
     path: PATHS.dist,
-    publicPath: '/build/',
-    filename: "[name].js",
-    chunkFilename: '[name].js'
+    filename: "[name].js"
   },
 
   module: {
@@ -57,9 +56,6 @@ module.exports = {
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '/public/path/to/',
-          },
         },
         'css-loader', 'sass-loader'
       ],
@@ -77,11 +73,20 @@ module.exports = {
     port: 8080,
   },
   plugins: [
-    new MiniCssExtractPlugin('styles.scss'),
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash:7].css"
+    }),
 
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`
-    }))
+    // ...PAGES.map(page => new HtmlWebpackPlugin({
+    //   template: `${PAGES_DIR}/${page}`,
+    //   filename: `./${page.replace(/\.pug/, '.html')}`
+    // }))
+
+    new HtmlWebpackPlugin({
+      template: PAGES_DIR + '/color_type.pug',
+      filename: 'color_type.html'
+    }),
+
+    new CleanWebpackPlugin()
   ]
 };

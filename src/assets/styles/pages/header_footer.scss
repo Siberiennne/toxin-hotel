@@ -1,0 +1,16 @@
+*{
+    background-color: $background-color;
+}
+
+section{
+    background-color: white;
+}
+
+.header-non-registed{
+    margin-top:140px;
+    display: flex;
+    justify-content: space-around;
+    a{
+     color: $dark-shade-5;
+    }
+}

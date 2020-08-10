@@ -1,0 +1,81 @@
+
+
+.logo {
+  img {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  ul {
+    li {
+      list-style-type: none;
+    }
+  }
+
+  @mixin color_example($color) {
+    height: 70px;
+    width: 70px;
+    background-color: $color;
+    border-radius: 6px;
+  }
+  .colors {
+    ul {
+      li {
+        margin-bottom: 20px;
+      }
+      .colors__item {
+        display: flex;
+        align-items: center;
+        .colors__item-example-1 {
+          @include color_example($dark-shade-100);
+        }
+
+        .colors__item-example-2 {
+          @include color_example($dark-shade-75);
+        }
+        .colors__item-example-3 {
+          @include color_example($dark-shade-50);
+        }
+        .colors__item-example-4 {
+          @include color_example($dark-shade-25);
+        }
+        .colors__item-example-5 {
+          @include color_example($dark-shade-5);
+        }
+        .colors__item-example-6 {
+          @include color_example($purple);
+        }
+        .colors__item-example-7 {
+          @include color_example($green);
+        }
+        .colors__item-desc {
+          padding-left: 40px;
+        }
+      }
+    }
+  }
+
+  .types {
+    ul {
+      li {
+        margin-bottom: 50px;
+      }
+      .types__item {
+        display: flex;
+        
+        .types__item-example {
+          color: $dark-shade-25;
+          text-align: right;
+          min-width: 37px;
+        }
+        .types__item-desc {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}
