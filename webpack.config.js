@@ -10,18 +10,24 @@ const PATHS = {
   dist: path.join(__dirname, 'dist')
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/pages`
+const PAGES_DIR = `${PATHS.src}/pug/pages`;
+const STYLES_DIR = `${PATHS.src}/assets/styles`;
+const STYLE = fs.readdirSync(STYLES_DIR).filter(fileName => fileName.endsWith('.scss'))
+
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 module.exports = {
   mode: 'development',
+  context: PATHS.src,
   entry: {
-    'color_type': PATHS.src + '/main.js'
+    //color_type: './pug/pages/color_type.js',
+    color_type: ['./pug/pages/color_type.js', './assets/styles/index.scss'],
+    header_footer: ['./pug/pages/header_footer.js', './assets/styles/index.scss'],
   },
   watch: true,
   output: {
     path: PATHS.dist,
-    filename: "[name].js"
+    filename: 'assets/js/[name].[hash:7].js'
   },
 
   module: {
@@ -63,7 +69,11 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.json', '.js', '.jsx']
+    extensions: ['.json', '.js', '.jsx'],
+    alias: {
+      images: path.resolve(__dirname, "../src/assets/img"),
+      fonts: path.resolve(__dirname, "../src/assets/fonts"),
+    },
   },
   devtool: 'source-map',
   devServer: {
@@ -74,7 +84,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[hash:7].css"
+      filename: 'assets/css/index.[hash:7].css'
     }),
 
     // ...PAGES.map(page => new HtmlWebpackPlugin({
@@ -84,7 +94,12 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: PAGES_DIR + '/color_type.pug',
-      filename: 'color_type.html'
+      filename: 'pages/color_type.html'
+    }),
+
+    new HtmlWebpackPlugin({
+      template: PAGES_DIR + '/header_footer.pug',
+      filename: 'pages/header_footer.html'
     }),
 
     new CleanWebpackPlugin()
