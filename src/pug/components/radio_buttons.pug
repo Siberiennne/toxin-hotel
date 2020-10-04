@@ -1,0 +1,9 @@
+include ../blocks/input.pug
+
+
+mixin radio-buttons(data, groupName)
+    .radio-buttons-block 
+        -for(let i = 0; i < data.items.length; i++)      
+            .radio-button-labeled
+                input(type = 'radio' id = data.items[i].id name = groupName value  = data.items[i].valueForServer checked = i === 0 ? true : false).radio-button 
+                label(for=data.items[i].id)=data.items[i].value
