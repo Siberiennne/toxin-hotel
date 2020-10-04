@@ -1,9 +1,20 @@
-$dark-shade-100: #1F2041;
-$dark-shade-75: rgba(31, 32, 65,0.75);
-$dark-shade-50: rgba(31, 32, 65,0.5);
-$dark-shade-25: rgba(31, 32, 65,0.25);
-$dark-shade-5: rgba(31, 32, 65,0.05);
-$purple: #BC9CFF;
-$green: #6FCF97;
+//$background-color: #e5e5e5;
+$background-color: white;
 
-$background-color: #E5E5E5;
+//Text colors
+$dark-shade-100: #1f2041;
+$dark-shade-75: rgba(31, 32, 65, 0.75);
+$dark-shade-50: rgba(31, 32, 65, 0.5);
+$dark-shade-25: rgba(31, 32, 65, 0.25);
+$dark-shade-5: rgba(31, 32, 65, 0.05);
+$purple: #bc9cff;
+$green: #6fcf97;
+
+//Button colors
+$button-dark: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$button-light: white;
+
+//Gradients
+$greenGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$purpleGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$purpleGradientLight: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
