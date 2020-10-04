@@ -1,49 +1,40 @@
 .toggle {
-    position: relative;
 
-    input[type='checkbox']:checked+.toggle-button::before,
-    input[type='checkbox']:not(:checked)+.toggle-button::before {
-        content: '';
-        position: absolute;
-        top: 0px;
-        left: 0px;
+    input[type='checkbox'].toggle-button {
+        position: relative;
+        display: inline-block;
         width: 40px;
         height: 20px;
+        outline: none;
         background: white;
         border-radius: 10px;
         border: 1px solid $dark-shade-25;
+        transition: 0.4s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
-    input[type='checkbox']:not(:checked)+.toggle-button::before {
-        border: 1px solid $dark-shade-25;
-    }
-
-    input[type='checkbox']:checked+.toggle-button::before {
-        border: 1px solid $purple;
-    }
-
-    input[type='checkbox']:checked+.toggle-button::after,
-    input[type='checkbox']:not(:checked)+.toggle-button::after {
-        content: '';
+    input[type='checkbox'].toggle-button::after {
+        content: "";
+        display: inline-block;
         position: absolute;
-        top: 4px;
+        top: 3px;
         left: 4px;
         width: 12px;
         height: 12px;
         border-radius: 10px;
         background: $dark-shade-25;
-        // -webkit-transition: .4s;
-        // transition: .4s;
+        transition: 0.4s;
+        transform: translateX(0);
     }
 
-    input[type='checkbox']:not(:checked)+.toggle-button::after {
-        background: $dark-shade-25;
+    input[type='checkbox'].toggle-button:checked{
+        border: 1px solid $purple;
     }
 
-    input[type='checkbox']:checked+.toggle-button::after {
-        background: $purple;
-        // -webkit-transform: translateX(22px);
-        // -ms-transform: translateX(22px);
-        // transform: translateX(22px);
+    input[type='checkbox'].toggle-button:checked::after {
+        background: $purpleGradient;
+        transform: translateX(20px);
     }
 }
