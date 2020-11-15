@@ -1,0 +1,48 @@
+@mixin colorMark {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: -15px;
+    //margin-right: 5px;
+}
+
+.doughnut-chart__legend {
+    
+
+
+    // left: 150px;
+    // top: 30px;
+}
+
+.legend__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    &_great::before {
+        @include colorMark();
+        content: '';
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &_good::before {
+        @include colorMark();
+        content: '';
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &_moderate::before {
+        @include colorMark();
+        content: '';
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &_bad::before {
+        @include colorMark();
+        content: '';
+        background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+}

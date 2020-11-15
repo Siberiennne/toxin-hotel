@@ -1,0 +1,11 @@
+include ./__chart/doughnut-chart__chart.pug
+include ./__info/doughnut-chart__info.pug
+include ./__legend/doughnut-chart__legend.pug
+
+mixin doughnut-chart(data)
+    .doughnut-chart
+        .layout-flex__left
+            +doughnut-chart__chart(data)
+            +doughnut-chart__info(data.totalNumber)
+        .layout-flex__right
+            +doughnut-chart__legend

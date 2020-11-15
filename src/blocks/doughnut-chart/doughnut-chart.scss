@@ -1,0 +1,14 @@
+@import './__chart/doughnut-chart__chart.scss';
+@import './__info/doughnut-chart__info.scss';
+@import './__legend/doughnut-chart__legend.scss';
+
+.doughnut-chart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.layout-flex__left{
+    position: relative;
+}
+
