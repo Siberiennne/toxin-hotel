@@ -1,0 +1,19 @@
+@import '../../styles/index.scss';
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../forms/room-finder/room-finder.scss';
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+main {
+    min-height: 880px;
+    width: 100%;
+    background-image: url(../../assets/img/Landing/image.png);
+    flex-grow: 1;
+    padding-top: 70px;
+    padding-left: 110px;
+}

@@ -1,0 +1,16 @@
+extends ../base.pug
+include ../../blocks/header/header.pug
+
+
+block title
+    title Landing page
+block links
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+block header
+    +header('unlogged')
+append main
+    include ../../forms/room-finder/room-finder.pug
+
+block footer
+    include ../../blocks/footer/footer.pug
