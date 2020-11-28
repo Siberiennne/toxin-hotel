@@ -1,6 +1,7 @@
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
 
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -11,21 +12,21 @@ const PATHS = {
   dist: path.join(__dirname, 'dist')
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/pages`;
+const PAGES_ENTRY_DIR = `${PATHS.src}/pages`;
+const PAGES_OUTPUT_DIR = "views/pages";
 const STYLES_DIR = `${PATHS.src}/assets/styles`;
 const IMAGES_DIR = `${PATHS.src}/assets/img`;
 const IMAGES = fs.readdirSync(IMAGES_DIR).filter(fileName => fileName.endsWith('.scss'))
-const STYLE = fs.readdirSync(STYLES_DIR).filter(fileName => fileName.endsWith('.scss'))
+const STYLE = `${PATHS.src}/styles/index.scss`;
 
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
+const PAGES = fs.readdirSync(PAGES_ENTRY_DIR).filter(fileName => fileName.endsWith('.pug'));
+
+let pageTitles = ['color-type', 'header-footer', 'landing-page', 'form-elements', 'cards', 'search-room', 'room-details', 'registration', 'sign-in'];
 
 module.exports = {
   mode: 'development',
   context: PATHS.src,
-  entry: {
-    color_type: ['./pug/pages/color_type.js', './assets/styles/index.scss'],
-    header_footer: ['./pug/pages/header_footer.js', './assets/styles/index.scss'],
-  },
+  entry: {},
   watch: true,
   output: {
     path: PATHS.dist,
@@ -65,7 +66,7 @@ module.exports = {
         {
           loader: MiniCssExtractPlugin.loader,
         },
-        'css-loader', 'sass-loader'
+        'css-loader?url=false', 'sass-loader'
       ],
     },
     // 
@@ -100,23 +101,9 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/index.[contenthash].css'
+      filename: 'assets/css/[name].[contenthash].css'
     }),
 
-    // ...PAGES.map(page => new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/${page}`,
-    //   filename: `./${page.replace(/\.pug/, '.html')}`
-    // }))
-
-    new HtmlWebpackPlugin({
-      template: PAGES_DIR + '/color_type.pug',
-      filename: 'pages/color_type.html'
-    }),
-
-    new HtmlWebpackPlugin({
-      template: PAGES_DIR + '/header_footer.pug',
-      filename: 'pages/header_footer.html'
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -125,6 +112,24 @@ module.exports = {
         }
       ]
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ]
 };
+
+pageTitles.forEach((title) => {
+
+  module.exports.entry[title] = [PAGES_ENTRY_DIR + `/${title}/${title}.js`, PAGES_ENTRY_DIR + `/${title}/${title}.scss`];
+
+  module.exports.plugins.push(
+    new HtmlWebpackPlugin({
+      template: PAGES_ENTRY_DIR + `/${title}/${title}.pug`,
+      filename: PAGES_OUTPUT_DIR + `/${title}.html`,
+      chunks: [title]
+    })
+  )
+})
