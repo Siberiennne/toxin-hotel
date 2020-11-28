@@ -1,0 +1,14 @@
+@import '../../styles/index';
+@import '../../forms/signin-form/signin-form';
+@import '../../blocks/header/header';
+@import '../../blocks/footer/footer';
+
+main {
+    background-image: url(../../assets/img/Registration/image.png);
+    background-size: 100%;
+    padding: 172px 0px;
+
+    .signin-form {
+        margin: auto;
+    }
+}

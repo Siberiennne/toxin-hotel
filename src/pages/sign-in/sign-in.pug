@@ -1,0 +1,17 @@
+extends ../base.pug
+include ../../blocks/header/header.pug
+include ../../forms/signin-form/signin-form.pug
+
+block title
+    title Sign-in
+block links
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+block header
+    +header('')
+append main
+    .main
+        +signin-form
+
+block footer
+    include ../../blocks/footer/footer.pug
