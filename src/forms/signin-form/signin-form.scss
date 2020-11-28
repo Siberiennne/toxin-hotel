@@ -1,0 +1,14 @@
+@import './__create-account/signin-form__create-account';
+@import './__enter-button/signin-form__enter-button';
+@import './__registration/signin-form__registration';
+@import './__title/signin-form__title.scss';
+
+
+.signin-form{
+    background-color: white;
+    width: 380px;
+    padding: 40px 30px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,13 @@
+include ../../blocks/registration/registration.pug
+include ../../blocks/button/button.pug
+include ./__create-account/signin-form__create-account.pug
+include ./__enter-button/signin-form__enter-button.pug
+include ./__registration/signin-form__registration.pug
+
+mixin signin-form
+    form(name='signin-form' method='post' action='signin-form.php').signin-form
+        h1.signin-form__title='Войти'
+        +signin-form__registration
+        +signin-form__enter-button
+        +signin-form__create-account
+        
