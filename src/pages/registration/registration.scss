@@ -1,0 +1,15 @@
+@import '../../styles/index.scss';
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../forms/registration-form/registration-form.scss';
+
+.main {
+    background-image: url(../../assets/img/Registration/image.png);
+    background-size: 100%;
+    padding: 19px 0px;
+
+    .registration-form {
+        margin: 0px auto;
+    }
+
+}

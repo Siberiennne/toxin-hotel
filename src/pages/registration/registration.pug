@@ -1,0 +1,17 @@
+extends ../base.pug
+include ../../blocks/header/header.pug
+
+
+block title
+    title Registration
+block links
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+block header
+    +header('')
+append main
+    .main
+        include ../../forms/registration-form/registration-form.pug
+
+block footer
+    include ../../blocks/footer/footer.pug
