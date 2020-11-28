@@ -1,0 +1,6 @@
+include ../../../blocks/text-field/text-field.pug
+
+mixin registration-form__name
+    .registration-form__name
+        +text-field({name: "text-field_name",placeholder: 'Имя'})
+        +text-field({name: "text-field_surname",placeholder: 'Фамилия'})

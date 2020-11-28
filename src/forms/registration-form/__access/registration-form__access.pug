@@ -1,0 +1,6 @@
+include ../../../blocks/text-field/text-field.pug
+
+mixin registration-form__access
+    .registration-form__access
+        +text-field({name: 'email-input', placeholder:'Email'})
+        +text-field({name: 'password-input', placeholder:'Пароль'})

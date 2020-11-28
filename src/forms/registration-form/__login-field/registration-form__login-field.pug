@@ -1,0 +1,6 @@
+include ../../../blocks/button/button.pug
+
+mixin registration-form__login-field
+    .registration-form__login-field
+        span.registration-form__login-field_text='Уже есть аккаунт на Toxin'
+        +button({color: "light",size: "small",text: "Войти"})

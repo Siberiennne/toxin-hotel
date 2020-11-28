@@ -1,0 +1,26 @@
+
+include ../../blocks/label/label.pug
+include ../../blocks/like-button/like-button.pug
+include ./__access/registration-form__access.pug
+include ./__birthday/registration-form__birthday.pug
+include ./__name/registration-form__name.pug
+include ./__button/registration-form__button.pug
+include ./__sex-field/registration-form__sex-field.pug
+include ./__login-field/registration-form__login-field.pug
+include ./__toggle/registration-form__toggle.pug
+
+form(name='registration-form' method='post' action='registration.php').registration-form
+    h1.registration-form__block Регистрация аккаунта
+    .registration-form__block
+        +registration-form__name
+        +registration-form__sex-field
+    .registration-form__block
+        +registration-form__birthday
+    .registration-form__block
+        +label('ДАННЫЕ ДЛЯ ВХОДА В СЕРВИС')
+        +registration-form__access
+        +registration-form__toggle
+    .registration-form__block
+        +registration-form__button
+    .registration-form__block
+        +registration-form__login-field

@@ -1,0 +1,6 @@
+include ../../../blocks/date-dropdown/date-dropdown.pug
+include ../../../blocks/label/label.pug
+
+mixin registration-form__birthday
+    +label('ДАТА РОЖДЕНИЯ')
+    +date-dropdown({name: 'ДАТА РОЖДЕНИЯ', placeholder: 'ДД.ММ.ГГГГ', filter:'true'}).registration-form__birthday

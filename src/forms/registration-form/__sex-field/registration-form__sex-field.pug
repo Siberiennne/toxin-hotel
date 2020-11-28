@@ -1,0 +1,8 @@
+include ../../../blocks/radio-buttons/radio-buttons.pug
+
+mixin registration-form__sex-field
+    .registration-form__sex-field
+        +radio-buttons('sex', [
+                {id: 'male', value:'male', title:'Мужчина', checked: 'true'},
+                {id: 'female', value:'female', title:'Женщина'}
+            ])
