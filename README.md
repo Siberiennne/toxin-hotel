@@ -1,1 +1,1 @@
-Link: git@github.com:Siberiennne/hotel-booking.git
+Link: git@github.com:Siberiennne/toxin-hotel.git
