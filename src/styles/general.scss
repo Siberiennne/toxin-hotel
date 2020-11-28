@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-shade-75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: $dark-shade-100;
+  font-style: normal;
+  font-weight: bold;
+}
+
+h1 {
+  @include quicksand24;
+}
+
+h2 {
+  @include quicksand19;
+}
+
+h3 {
+  @include montserrat12;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.container {
+  margin: 0px 60px;
+  border: 1px dotted rgb(118, 125, 224);
+}
+
+.layout-container {
+  margin-left: 140px;
+  margin-right: 120px;
+  border: 1px dotted rgb(118, 125, 224);
+}
+
+.sidebar {
+  width: 266px;
+  margin-right: 60px;
+  padding-top: 30px;
+  border: 1px double deeppink;
+}
+
+.main-part {
+  display: flex;
+}
+
+@mixin input-field {
+  height: 44px;
+  border: 1px solid $dark-shade-25;
+  border-radius: 4px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 15px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input[type='text'] {
+  @include input-field();
+}
+
+input[type='radio'] {
+  //  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+// label {
+//   margin-bottom: 5px;
+// }
