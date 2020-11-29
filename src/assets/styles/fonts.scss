@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/Quicksand-Bold.eot'),
+        url('../fonts/Quicksand-Bold.eot.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Quicksand-Bold.woff') format('woff'),
+        url('../fonts/Quicksand-Bold.ttf') format('truetype'),
+        url('../fonts/Quicksand-Bold.svg') format('svg');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: 
+        url('../fonts/Montserrat-Regular.eot'),
+        url('../fonts/Montserrat-Regular.eot.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat-Regular.ttf') format('truetype'),
+        url('../fonts/Montserrat-Regular.svg') format('svg');
+}
+
+@font-face {
+    font-family: "Montserrat:wght@700";
+    src: 
+        url('../fonts/Montserrat-Bold.eot'),
+        url('../fonts/Montserrat-Bold.eot.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Bold.woff') format('woff'),
+        url('../fonts/Montserrat-Bold.ttf') format('truetype'),
+        url('../fonts/Montserrat-Bold.svg') format('svg'),
+}
+
+@mixin montserrat24 {
+    font-family: "Montserrat:wght@700";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+@mixin montserrat19 {
+    font-family: "Montserrat:wght@700";
+    font-size: 19px;
+    line-height: 24px;
+}
+
+@mixin quicksand19 {
+    font-family: "Quicksand";
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 29px;
+}
+
+@mixin montserrat14 {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+@mixin montserrat12 {
+    font-family: "Montserrat:wght@700";
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
