@@ -15,8 +15,8 @@ const PATHS = {
 const PAGES_ENTRY_DIR = `${PATHS.src}/pages`;
 const PAGES_OUTPUT_DIR = "views/pages";
 const STYLES_DIR = `${PATHS.src}/assets/styles`;
-const IMAGES_DIR = `${PATHS.src}/assets/img`;
-const IMAGES = fs.readdirSync(IMAGES_DIR).filter(fileName => fileName.endsWith('.scss'))
+// const IMAGES_DIR = `${PATHS.src}/assets/img`;
+// const IMAGES = fs.readdirSync(IMAGES_DIR).filter(fileName => fileName.endsWith('.scss'))
 const STYLE = `${PATHS.src}/styles/index.scss`;
 
 const PAGES = fs.readdirSync(PAGES_ENTRY_DIR).filter(fileName => fileName.endsWith('.pug'));
@@ -69,7 +69,6 @@ module.exports = {
         'css-loader?url=false', 'sass-loader'
       ],
     },
-    // 
     {
       test: /\.(png|svg|jpg|gif)$/,
       use: [
@@ -78,11 +77,11 @@ module.exports = {
     },
     {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: [
-        'file-loader',
-      ],
+      use: {
+        loader: 'url-loader',
+      },
     },
-    ]
+    ],
   },
 
   resolve: {
@@ -109,6 +108,14 @@ module.exports = {
         {
           from: './assets/img',
           to: 'assets/img',
+        }
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './assets/fonts',
+          to: 'assets/fonts',
         }
       ]
     }),
