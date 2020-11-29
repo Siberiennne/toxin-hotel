@@ -1,0 +1,10 @@
+@import '../../assets/styles/index';
+@import '../../blocks/logo/logo';
+@import './__colors/color-type__colors';
+@import './__fonts/color-type__fonts';
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 158px 145px 150px;
+}

@@ -1,0 +1,13 @@
+.color-type__fonts {
+
+    display: grid;
+    grid-template-columns: 37px 370px;
+    grid-template-rows: 60px 47px 15px 48px;
+    column-gap: 30px;
+    row-gap: 50px;
+
+    .fonts__item__example {
+        color: $dark-shade-25;
+        justify-self: end;
+    }
+}

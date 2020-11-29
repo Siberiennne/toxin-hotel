@@ -1,0 +1,13 @@
+extends ../base.pug
+include ./__colors/color-type__colors.pug
+include ./__fonts/color-type__fonts.pug
+include ../../blocks/logo/logo.pug
+
+block title
+    title Colors and Types
+block links
+    link(href='')
+    +logo('grey')
+append main
+    +color-type__colors
+    +color-type__fonts

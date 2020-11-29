@@ -1,0 +1,57 @@
+mixin color-type__colors
+    .color-type__colors
+        -let fontColor='Dark Shade'
+        -let fontColorCode='#1F2041'
+        -let saturations=[100, 75, 50, 25, 5]
+
+        -let colorsNumber=2
+        -let colors={Purple:'#BC9CFF',Green:'#6FCF97'}
+
+        ul
+            each value in saturations
+                li.color-type__colors__item
+                    div(class='font-color-'+value)
+                    .colors__item__colors__desc
+                        h2=fontColor+' '+value+'%'
+                        h2=fontColorCode
+            each value,key in colors
+                li.color-type__colors__item
+                    div(class=key+'-color')
+                    .colors__item__colors__desc
+                        h2=key
+                        h2=value  
+            //- li.colors__item
+            //-     .colors__item-example-1
+            //-     .colors__item-desc
+            //-         h2 Dark Shade 100% 
+            //-         h2 #1F2041 
+            //- li.colors__item
+            //-     .colors__item-example-2
+            //-     .colors__item-desc
+            //-         h2 Dark Shade 75% 
+            //-         h2 #1F2041
+            //- li.colors__item
+            //-     .colors__item-example-3
+            //-     .colors__item-desc
+            //-         h2 Dark Shade 50% 
+            //-         h2 #1F2041
+            //- li.colors__item
+            //-     .colors__item-example-4
+            //-     .colors__item-desc
+            //-         h2 Dark Shade 25% 
+            //-         h2 #1F2041
+            //- li.colors__item
+            //-     .colors__item-example-5
+            //-     .colors__item-desc
+            //-         h2 Dark Shade 5% 
+            //-         h2 #1F2041
+            //- li.colors__item
+            //-     .colors__item-example-6
+            //-     .colors__item-desc
+            //-         h2 Purple 
+            //-         h2 #BC9CFF
+            //- li.colors__item
+            //-     .colors__item-example-7
+            //-     .colors__item-desc
+            //-         h2 Green 
+            //-         h2 #6FCF97 
