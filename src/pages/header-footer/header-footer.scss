@@ -1,0 +1,20 @@
+@import '../../assets/styles/index';
+@import '../../blocks/logo/logo';
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../blocks/button/button.scss';
+@import './__logo/header-footer__logo';
+@import './__footer_narrow/header-footer__footer_narrow';
+
+body {
+    background: rgba(229, 229, 229, 0.4);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-footer__block {
+    margin-bottom: 40px;
+}

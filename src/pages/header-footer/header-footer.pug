@@ -1,0 +1,18 @@
+extends ../base.pug
+include ../../blocks/header/header.pug
+
+block title 
+    title Headers & Footers
+block links
+    link(href='')
+append main
+    .header-footer__logo
+        +logo('grey')
+    .header-footer__block.header_unlogged
+        +header('')
+    .header-footer__block.header_logged
+        +header('Юлий Цезарь')
+    .header-footer__block.footer
+        include ../../blocks/footer/footer.pug
+    .header-footer__block.header-footer__footer_narrow
+        include ../../blocks/footer/_narrow/footer_narrow.pug
