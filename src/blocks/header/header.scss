@@ -1,0 +1,12 @@
+@import './__menu/header__menu.scss';
+@import './__user-profile/header__user-profile.scss';
+@import './_inner/header_inner.scss';
+@import './__main/header__main.scss';
+@import './__logo/header__logo';
+
+.header {
+    background: white;
+    box-shadow: 0px 10px 20px 0px $dark-shade-5;
+    font-size: 14px;
+    line-height: 17px;
+}

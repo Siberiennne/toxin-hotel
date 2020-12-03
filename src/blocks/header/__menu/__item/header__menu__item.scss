@@ -1,0 +1,18 @@
+@import './_dropdown/header-menu__item_dropdown';
+@import './_active/header-menu__item_active';
+
+.header__menu__item {
+    // display: inline-block;
+    color: $dark-shade-50;
+    margin-right: 20px;
+    line-height: 17px;
+    // vertical-align: bottom;
+
+    a{
+        color: $dark-shade-50;
+    }
+    &::nth-last-child {
+        margin-right: 0px;
+    }
+
+}

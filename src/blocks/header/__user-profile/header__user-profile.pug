@@ -1,0 +1,9 @@
+include ./_logged/user-profile_logged.pug
+include ./_unlogged/user-profile_unlogged.pug
+
+mixin header__user-profile(userInfo)
+    .header__user-profile
+        if (userInfo)
+            +user-profile_logged(userInfo)
+        else
+            +user-profile_unlogged

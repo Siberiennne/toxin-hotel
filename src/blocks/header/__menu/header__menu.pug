@@ -1,0 +1,10 @@
+include ./__item/_dropdown/header__menu__item__dropdown.pug
+
+mixin menu
+   .header__menu
+      each item in [{name: 'About us', text: 'О нас'},{name: 'Services', text: 'Услуги',isExpandable: true},{name: 'Vacancies', text: 'Вакансии'},{name: 'News', text: 'Новости'},{name: 'Agreements', text: 'Соглашения', isExpandable: true}]
+         if (item.isExpandable)
+            +header__menu__item__dropdown(item)
+         else
+            .header__menu__item
+               a(href='#')=item.text

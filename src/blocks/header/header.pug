@@ -1,0 +1,13 @@
+include ../logo/logo.pug
+include ./__menu/header__menu.pug
+include ./__user-profile/header__user-profile.pug
+
+mixin header(userInfo)
+    .header
+        .layout-container
+            .header_inner
+                .header__logo
+                    +logo('colored')
+                .header__main
+                    +menu
+                    +header__user-profile(userInfo)

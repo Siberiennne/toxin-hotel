@@ -1,0 +1,17 @@
+.user-profile_logged {
+    color: $dark-shade-50;
+    display: flex;
+    align-items: center;
+
+    &-divider {
+        display: inline-block;
+        margin-right: 20px;
+        background-color: $dark-shade-10;
+        width: 1px;
+        height: 30px;
+    }
+
+    &__login{
+        
+    }
+}
