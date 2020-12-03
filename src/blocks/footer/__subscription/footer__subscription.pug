@@ -1,0 +1,10 @@
+include ../../text-field/_subscription/text-field_subscription.pug
+
+.footer__subscription
+    ul
+        li
+            h3 Подписка 
+        li
+            p Получайте специальные предложения и новости сервиса
+        li
+            +text-field_subscription({ name:'email-input', placeholder: 'Email'})

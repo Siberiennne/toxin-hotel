@@ -1,0 +1,26 @@
+@import '../__logo/footer__logo';
+
+
+@mixin footer_narrow {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: white;
+    box-shadow: 0px 1px 0px 0px $dark-shade-5;
+}
+
+.footer_narrow {
+    @include footer_narrow;
+
+    &__inner {
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    &__item:nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    &__item:nth-last-child() {
+        margin-bottom: 0px;
+    }
+}

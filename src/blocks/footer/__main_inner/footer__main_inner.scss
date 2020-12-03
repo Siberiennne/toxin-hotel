@@ -1,0 +1,33 @@
+@import '../__about/footer__about';
+@import '../__hotel-info/footer__hotel-info';
+@import '../__logo/footer__logo';
+@import '../__nav/footer__nav';
+@import '../__service/footer__service';
+@import '../__subscription/footer__subscription';
+
+.footer__main_inner {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(60px, 1fr));
+    column-gap: 40px;
+    padding: 104px 0px 94px;
+
+    a {
+        color: $dark-shade-50;
+    }
+
+    ul {
+        li {
+            margin-bottom: 15px;
+        }
+
+        li:first-child {
+            font-family: "Montserrat:wght@700";
+            color: $dark-shade-75;
+            margin-bottom: 18px;
+        }
+
+        li:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}

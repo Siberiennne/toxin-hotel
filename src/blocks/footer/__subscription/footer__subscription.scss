@@ -1,0 +1,18 @@
+@import '../../text-field/_subscription/text-field_subscription';
+
+.footer__subscription {
+    // max-width: 260px;
+    grid-column: 10/13;
+
+    li:nth-child(2) {
+        margin-bottom: 21px;
+    }
+
+    .text-field_subscription {
+        max-width: 260px;
+
+        input[type='text'] {
+            width: 100%;
+        }
+    }
+}

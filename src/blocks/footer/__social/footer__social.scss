@@ -1,0 +1,10 @@
+.footer__social {
+    img {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    img:nth-last-of-type() {
+        margin-right: 0px;
+    }
+}
